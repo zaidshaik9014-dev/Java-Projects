@@ -88,11 +88,19 @@ public class Main {
 
                 double number = getValidNum(sc, "Enter number: ");
 
-                double result = Calculator.sqRoot(number);
+                try {
 
-                System.out.println("Result : " + result);
+                    double result = Calculator.sqRoot(number);
 
-                history.addHistory("√" + number + " = " + result);
+                    System.out.println("Result : " + result);
+
+                    history.addHistory("√" + number + " = " + result);
+
+                } catch (ArithmeticException e) {
+
+                    System.out.println(e.getMessage());
+                    
+                }
 
                 continue;
             }
