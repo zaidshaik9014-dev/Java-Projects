@@ -1,0 +1,17 @@
+# Compiled Java files
+*.class
+
+# Log files
+*.log
+
+# VS Code settings
+.vscode/
+
+# IntelliJ IDEA
+.idea/
+
+# Eclipse
+.settings/
+.project
+.classpath
+bin/
