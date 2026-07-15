@@ -1,6 +1,6 @@
 2,pen,stationary,10.0,2026-07-11
 3,mug,toilet,100.0,2026-07-11
 4,books,stationary,200.0,2026-07-11
-5,bread,food,40.0,2026-07-11
 6,book,stationary,200.0,2026-07-11
 7,recharge,mobile data,300.0,2026-07-11
+8,Pen,Staionary,10.0,2026-07-15
