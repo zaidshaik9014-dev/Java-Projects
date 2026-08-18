@@ -10,16 +10,20 @@ public class InputHelper {
 
         System.out.print(message);
 
-        return scanner.nextLine();
+        String input = scanner.nextLine().trim();
+
+        if (input.equalsIgnoreCase("exit")) {
+            throw new UserCancelledException();
+        }
+
+        return input;
     }
 
     public static int getInt(String message) {
 
         while (true) {
 
-            System.out.print(message);
-
-            String input = scanner.nextLine();
+            String input = getString(message);
 
             try {
 
@@ -52,9 +56,7 @@ public class InputHelper {
 
         while (true) {
 
-            System.out.print(message);
-
-            String input = scanner.nextLine().trim();
+            String input = getString(message);
 
             if (!input.isEmpty()) {
                 return input;
@@ -82,7 +84,7 @@ public class InputHelper {
 
         while (true) {
 
-            String phone = getNonEmptyString(message);
+            String phone = getString(message);
 
             if (phone.matches("\\d{10}")) {
                 return phone;

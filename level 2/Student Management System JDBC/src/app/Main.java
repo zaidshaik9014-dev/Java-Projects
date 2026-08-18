@@ -2,6 +2,7 @@ package app;
 
 import dao.StudentDAO;
 import helper.InputHelper;
+import helper.UserCancelledException;
 import java.util.ArrayList;
 import model.Student;
 
@@ -186,45 +187,43 @@ public class Main {
             System.out.println("6. Exit");
             System.out.println("================================");
 
+        try {
+
             int choice = InputHelper.getInt("Enter choice: ");
 
-            switch (choice) {
+                switch (choice) {
 
-                case 1:
+                    case 1:
+                        addStudent(dao);
+                        break;
+                    
+                    case 2:
+                        viewStudents(dao);
+                        break;
 
-                    addStudent(dao);
-                    break;
+                    case 3:
+                        updateStudent(dao);
+                        break;
 
-                case 2:
+                    case 4:
+                        deleteStudent(dao);
+                        break;
 
-                    viewStudents(dao);
-                    break;
+                    case 5:
+                        searchStudent(dao);
+                        break;
 
-                case 3:
+                    case 6:
+                        System.out.println("Thank you for using Student Management System!");
+                        return;
 
-                    updateStudent(dao);
-                    break;
+                    default:
+                        System.out.println("Invalid choice. Enter 1-6.");
+                }
 
-                case 4:
+            } catch (UserCancelledException e) {
 
-                    deleteStudent(dao);
-                    break;
-
-                case 5:
-
-                    searchStudent(dao);
-                    break;
-                
-
-                case 6:
-
-                    System.out.println("Thank you for using Student Management System!");
-                    return;
-
-                default:
-
-                    System.out.println("Invalid choice. Enter 1-5.");
-
+                System.out.println("\nOperation cancelled.");
             }
         }
     }
